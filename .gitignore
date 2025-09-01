@@ -1,0 +1,6 @@
+.DS_Store
+*.import
+
+# Godot 4+ specific ignores
+.godot/
+/android/

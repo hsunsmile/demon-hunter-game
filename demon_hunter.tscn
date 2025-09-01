@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://jn4g8fu57xmk"]
+
+[ext_resource type="PackedScene" uid="uid://bbsi6dponeqp2" path="res://pinky_player.tscn" id="1_2l3md"]
+
+[node name="Demon Hunter" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2749, 1845)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_2l3md")]
+position = Vector2(2761, 1943)
