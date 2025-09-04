@@ -28,3 +28,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func die() -> void:
+	$Timer.start()
+
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()

@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://jn4g8fu57xmk"]
+[gd_scene load_steps=8 format=3 uid="uid://jn4g8fu57xmk"]
 
 [ext_resource type="PackedScene" uid="uid://bbsi6dponeqp2" path="res://pinky_player.tscn" id="1_2l3md"]
 [ext_resource type="Texture2D" uid="uid://cicka8ketbi0n" path="res://sprites/world_tileset.png" id="2_4vsvu"]
+[ext_resource type="PackedScene" uid="uid://by1j80c5oj5cd" path="res://mushroom.tscn" id="3_5017a"]
+[ext_resource type="PackedScene" uid="uid://b0y8tdj7fqc3" path="res://killzone.tscn" id="4_1rvom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5017a"]
 texture = ExtResource("2_4vsvu")
@@ -14,7 +16,7 @@ texture = ExtResource("2_4vsvu")
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -7.02348, 8, 0.0989208, -8, -0.890301)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:0/0 = 0
@@ -83,7 +85,7 @@ texture = ExtResource("2_4vsvu")
 5:1/0 = 0
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:1/0 = 0
-9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -7.02348, 8, 0.0989208, -8, -0.890301)
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -8, 8, 8, -8, 8)
 10:1/0 = 0
 10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -7.02348, 8, 0.0989208, -8, -0.890301)
 11:1/0 = 0
@@ -154,23 +156,45 @@ texture = ExtResource("2_4vsvu")
 7:9/0 = 0
 2:4/size_in_atlas = Vector2i(3, 3)
 2:4/0 = 0
+2:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_1rvom"]
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_5017a")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_700th"]
+
 [node name="Demon Hunter" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(69, 12)
+position = Vector2(72, 12)
 tile_set = SubResource("TileSet_1rvom")
 rendering_quadrant_size = 128
 format = 2
-layer_0/tile_data = PackedInt32Array(196611, 1, 0, 196610, 1, 0, 262142, 65537, 1, 262141, 65537, 1, 196604, 65537, 1, 262140, 65537, 1, 196603, 65537, 1, 196602, 196609, 1, 196601, 196609, 1, 196600, 196609, 1, 131058, 131073, 0, 196594, 131073, 0, 196593, 131073, 0, 65518, 458753, 0, 262143, 589825, 0, 196608, 655361, 0, 196609, 720897, 0, 196595, 589825, 0, 196596, 655361, 0, 196597, 720897, 0, 196598, 655361, 0, 196599, 720897, 0, 65517, 458753, 1, 65516, 458753, 1, 65515, 458753, 1, -21, 458753, 1, -65557, 458753, 1, -65558, 458753, 1, -131094, 458753, 1, -262164, 524289, 1, -262163, 524289, 1, -262162, 524289, 1, -262161, 524289, 1, -196621, 589825, 2, -196620, 655361, 2, -196619, 720897, 2, -196618, 262145, 0, -196617, 262145, 0, -131081, 262145, 0, -131080, 262145, 0, -131079, 262145, 0, -131078, 262145, 0, -65542, 262145, 0, -65541, 262145, 0, 65534, 327681, 3, 131070, 327681, 4, 196606, 327681, 5, -262165, 524289, 0, -196622, 458753, 0, -196623, 458753, 0, -131092, 393217, 3, -65556, 393217, 4, -20, 393217, 5, -262153, 393217, 6, 65519, 458753, 0, -131076, 327681, 0, -65540, 327681, 0, -131075, 589825, 2, -131074, 655361, 2, -131073, 720897, 2, -196608, 524289, 0, -196607, 524289, 0, -196606, 524289, 0, -131070, 524289, 0, -65534, 524289, 0, -65533, 524289, 0, 65520, 458753, 0)
+layer_0/tile_data = PackedInt32Array(196599, 720897, 0, 196598, 655361, 0, 196597, 720897, 0, 196596, 655361, 0, 196595, 589825, 0, 196594, 131073, 0, 131058, 131073, 0, 196593, 131073, 0, 65520, 458753, 0, 65519, 458753, 0, 65518, 458753, 0, 65517, 458753, 1, 65516, 458753, 1, -20, 393217, 5, -21, 458753, 1, -65557, 458753, 1, 65515, 458753, 1, -65556, 393217, 4, -131092, 393217, 3, -131094, 458753, 1, -65558, 458753, 1, -262164, 524289, 1, -262163, 524289, 1, -262162, 524289, 1, -262161, 524289, 1, -327698, 458753, 5, -196623, 458753, 0, -196622, 458753, 0, -196619, 720897, 2, -196618, 262145, 0, -196617, 262145, 0, -131079, 262145, 0, -131080, 262145, 0, -131081, 262145, 0, -262153, 393217, 6, -196620, 655361, 2, -196621, 589825, 2, -131078, 262145, 0, -65542, 262145, 0, -65541, 262145, 0, -65540, 327681, 0, -131076, 327681, 0, -131075, 589825, 2, -131074, 655361, 2, -131073, 720897, 2, -196608, 524289, 0, -196607, 524289, 0, -196606, 524289, 0, -131070, 524289, 0, -65534, 524289, 0, -65533, 524289, 0, 196600, 196609, 1, 196602, 196609, 1, 196601, 196609, 1, 196603, 65537, 1, 65534, 327681, 3, 131070, 327681, 4, 196606, 327681, 5, 196604, 65537, 1, 262140, 65537, 1, 262141, 65537, 1, 262142, 65537, 1, 196608, 655361, 0, 262143, 589825, 0, 196609, 720897, 0, 196610, 1, 0, 196611, 1, 0)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_2l3md")]
 position = Vector2(126, 60)
+collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-138, -58)
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
+limit_bottom = 120
+limit_smoothed = true
+
+[node name="mushroom2" parent="." instance=ExtResource("3_5017a")]
+position = Vector2(0, 40)
+scale = Vector2(0.5, 0.5)
+collision_mask = 2
+
+[node name="mushroom" parent="." instance=ExtResource("3_5017a")]
+position = Vector2(28, 55)
+scale = Vector2(0.5, 0.5)
+collision_mask = 2
+
+[node name="killzone" parent="." instance=ExtResource("4_1rvom")]
+position = Vector2(-12, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape2D_700th")
